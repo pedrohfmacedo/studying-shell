@@ -53,13 +53,62 @@ prj/my_project/
 ./create_prj_complet.sh my_project
 ```
 
-This script creates a more detailed tree for:
+Generated structure:
 
-- frontend
-- verification
-- backend
-- DFT
-- docs
+```text
+prj/my_project/
+├── DFT/
+│   ├── constraints/
+│   ├── logs/
+│   ├── patterns/
+│   ├── reports/
+│   ├── scripts/
+│   └── work/
+├── backend/
+│   ├── constraints/
+│   ├── docs/
+│   ├── logs/
+│   ├── outputs/
+│   ├── parasitics/
+│   ├── physical/
+│   ├── reports/
+│   │   ├── area/
+│   │   ├── power/
+│   │   ├── signoff/
+│   │   └── timing/
+│   ├── structural/
+│   └── work/
+├── docs/
+│   └── README.md
+├── frontend/
+│   ├── constraints/
+│   ├── lec/
+│   ├── logs/
+│   ├── parasitics/
+│   ├── reports/
+│   │   ├── area/
+│   │   ├── power/
+│   │   └── timing/
+│   ├── rtl/
+│   │   ├── src/
+│   │   └── tb/
+│   ├── scripts/
+│   │   └── genus/
+│   ├── simulation/
+│   │   ├── gatelevel/
+│   │   └── rtl/
+│   ├── structural/
+│   │   └── genus/
+│   ├── timing/
+│   └── work/
+└── verification/
+    ├── docs/
+    ├── logs/
+    ├── reports/
+    ├── scripts/
+    ├── src/
+    └── tb/
+```
 
 It is useful when starting a digital design flow that needs separated folders for reports, scripts, logs, constraints, simulation, and physical design artifacts.
 
@@ -69,15 +118,37 @@ It is useful when starting a digital design flow that needs separated folders fo
 ./create_uvm_project_elmar.sh my_uvm_project
 ```
 
-This script creates directories such as:
+Generated structure:
 
-- `agents`
-- `env`
-- `rtl`
-- `sequence`
-- `sim`
-- `top`
-- `docs`
+```text
+prj/my_uvm_project/
+├── agents/
+│   ├── agent.svh
+│   ├── driver.svh
+│   └── monitor.svh
+├── docs/
+│   └── README.md
+├── env/
+│   ├── coverage_in.svh
+│   ├── coverage_out.svh
+│   ├── env.svh
+│   └── refmod.svh
+├── rtl/
+│   └── dut.sv
+├── sequence/
+│   ├── sequence.svh
+│   ├── test.svh
+│   └── trans.svh
+├── sim/
+│   ├── cover.do
+│   ├── session.tcl
+│   ├── simvision.svcf
+│   └── wave.do
+└── top/
+    ├── interface.sv
+    ├── test_pkg.sv
+    └── top.sv
+```
 
 It also populates several `.sv` and `.svh` files with starter content for a UVM environment.
 
@@ -85,6 +156,38 @@ It also populates several `.sv` and `.svh` files with starter content for a UVM 
 
 ```bash
 ./create_uvm_project_elmar_default.sh my_uvm_project
+```
+
+Generated structure:
+
+```text
+prj/my_uvm_project/
+├── agents/
+│   ├── agent.svh
+│   ├── driver.svh
+│   └── monitor.svh
+├── docs/
+│   └── README.md
+├── env/
+│   ├── coverage_in.svh
+│   ├── coverage_out.svh
+│   ├── env.svh
+│   └── refmod.svh
+├── rtl/
+│   └── dut.sv
+├── sequence/
+│   ├── sequence.svh
+│   ├── test.svh
+│   └── trans.svh
+├── sim/
+│   ├── cover.do
+│   ├── session.tcl
+│   ├── simvision.svcf
+│   └── wave.do
+└── top/
+    ├── interface.sv
+    ├── test_pkg.sv
+    └── top.sv
 ```
 
 This version is useful when you want a more generic starting point with placeholders that can be adapted to your DUT and verification flow.
